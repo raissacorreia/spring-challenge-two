@@ -24,6 +24,10 @@ public class BankTransaction {
         return text;
     }
 
+    public String getWrittenType() {
+        return this.type == 1 ? "Credit" : "Debit";
+    }
+
     public void setAmount(double amount) {
         this.amount = amount;
     }

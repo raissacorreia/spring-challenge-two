@@ -1,8 +1,10 @@
 package com.challenge.hiringtest.adapters;
 
 import com.challenge.hiringtest.interfaces.BankTransaction;
+import com.challenge.hiringtest.interfaces.BankBalance;
+
 import com.bank1.integration.Bank1AccountSource;
-import com.bank1.integration.Bank1Transaction;
+
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -16,7 +18,6 @@ public class AdapterBank1 {
     }
 
     public List<BankTransaction> getTransactions() {
-
         List<BankTransaction> transactionList = bank1.getTransactions(1, null, null).stream().map(
                 transaction -> {
                     return new BankTransaction(
@@ -25,7 +26,12 @@ public class AdapterBank1 {
                             transaction.getText()
                     );
         }).collect(Collectors.toList());
-
         return transactionList;
    }
+
+    public BankBalance getFullBalance() {
+        double balance = bank1.getAccountBalance(1);
+        String currency = bank1.getAccountCurrency(1);
+        return new BankBalance(balance, currency);
+    }
 }

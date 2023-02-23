@@ -1,17 +1,30 @@
 package com.challenge.hiringtest.bank;
 
-/**
- * Controller that pulls information form multiple bank integrations and prints them to the console.
- *
- * Created by Par Renyard on 5/12/21.
- */
+import com.challenge.hiringtest.interfaces.BankTransactions;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("")
 public class BankController {
 
-    public void printBalances() {
-        System.out.println("Implement me to pull balance information from all available bank integrations and display them, one after the other.");
+    private BankTransactions bankTransactions;
+
+    @GetMapping("/transactions")
+    public void printTransactions() {
+        bankTransactions = new BankTransactions(1);
+        bankTransactions.printTransactions();
+        bankTransactions = new BankTransactions(2);
+        bankTransactions.printTransactions();
     }
 
-    public void printTransactions() {
-        System.out.println("Implement me to pull transactions from all available bank integrations and display them, one after the other.");
+    @GetMapping("/balances")
+    public void printBalances() {
+        bankTransactions = new BankTransactions(1);
+        bankTransactions.printBalance();
+        bankTransactions = new BankTransactions(2);
+        bankTransactions.printBalance();
     }
 }
