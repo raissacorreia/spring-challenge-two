@@ -1,8 +1,6 @@
 package com.challenge.hiringtest.interfaces;
 
 import com.challenge.hiringtest.adapters.*;
-import com.bank1.integration.Bank1AccountSource;
-import com.bank2.integration.Bank2AccountSource;
 
 public class BankBalance {
 
@@ -16,11 +14,11 @@ public class BankBalance {
 
     public BankBalance(int bankId) {
         if (bankId == 1) {
-            AdapterBank1 adapterBank1 = new AdapterBank1(new Bank1AccountSource());
+            AdapterBank1 adapterBank1 = new AdapterBank1();
             this.setAmount(adapterBank1.getFullBalance().getAmount());
             this.setCurrency(adapterBank1.getFullBalance().getCurrency());
         } else if (bankId == 2) {
-            AdapterBank2 adapterBank2 = new AdapterBank2(new Bank2AccountSource());
+            AdapterBank2 adapterBank2 = new AdapterBank2();
             this.setAmount(adapterBank2.getFullBalance().getAmount());
             this.setCurrency(adapterBank2.getFullBalance().getCurrency());
         }

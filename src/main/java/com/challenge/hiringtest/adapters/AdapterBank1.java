@@ -13,8 +13,8 @@ public class AdapterBank1 {
 
     private Bank1AccountSource bank1;
 
-    public AdapterBank1(Bank1AccountSource bank1) {
-        this.bank1 = bank1;
+    public AdapterBank1() {
+        this.bank1 = new Bank1AccountSource();
     }
 
     public List<BankTransaction> getTransactions() {
