@@ -1,15 +1,12 @@
 package com.challenge.hiringtest.adapters;
 
-import com.challenge.hiringtest.interfaces.BankTransaction;
-import com.challenge.hiringtest.interfaces.BankBalance;
-
-import com.bank2.integration.Bank2AccountSource;
-
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
-public class AdapterBank2 {
+import com.bank2.integration.Bank2AccountSource;
+import com.challenge.hiringtest.interfaces.*;
+
+public class AdapterBank2 implements IBank {
 
     private Bank2AccountSource bank2;
 
@@ -26,7 +23,7 @@ public class AdapterBank2 {
                     String text = transaction.getText();
 
                     return new BankTransaction(amount, type, text);
-        }).collect(Collectors.toList());
+                }).collect(Collectors.toList());
         return transactionList;
     }
 

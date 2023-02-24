@@ -3,19 +3,20 @@ package com.challenge.hiringtest.interfaces;
 import com.challenge.hiringtest.adapters.*;
 
 import java.util.List;
+import java.util.ArrayList;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.challenge.hiringtest.interfaces.IBank;
 
 public class BankTransactions {
 
     private List<BankTransaction> bankRecord;
+    @Autowired
+    ArrayList<IBank> banks = new ArrayList<IBank>();
 
     public BankTransactions(int bankId) {
-        if (bankId == 1) {
-            AdapterBank1 adapterBank1 = new AdapterBank1();
-            this.setBankRecord(adapterBank1.getTransactions());
-        } else if (bankId == 2) {
-            AdapterBank2 adapterBank2 = new AdapterBank2();
-            this.setBankRecord(adapterBank2.getTransactions());
-        }
+        banks.add(new AdapterBank1());
+        banks.add(new AdapterBank2());
+        this.setBankRecord(banks.get(bankId).getTransactions());
     }
 
     public List<BankTransaction> getBankRecord() {

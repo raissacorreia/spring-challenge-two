@@ -2,10 +2,17 @@ package com.challenge.hiringtest.interfaces;
 
 import com.challenge.hiringtest.adapters.*;
 
+import java.util.ArrayList;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.challenge.hiringtest.interfaces.IBank;
+
 public class BankBalance {
 
     private double amount;
     private String currency;
+
+    @Autowired
+    ArrayList<IBank> banks = new ArrayList<IBank>();
 
     public BankBalance(double amount, String currency) {
         this.amount = amount;
@@ -13,15 +20,10 @@ public class BankBalance {
     }
 
     public BankBalance(int bankId) {
-        if (bankId == 1) {
-            AdapterBank1 adapterBank1 = new AdapterBank1();
-            this.setAmount(adapterBank1.getFullBalance().getAmount());
-            this.setCurrency(adapterBank1.getFullBalance().getCurrency());
-        } else if (bankId == 2) {
-            AdapterBank2 adapterBank2 = new AdapterBank2();
-            this.setAmount(adapterBank2.getFullBalance().getAmount());
-            this.setCurrency(adapterBank2.getFullBalance().getCurrency());
-        }
+        banks.add(new AdapterBank1());
+        banks.add(new AdapterBank2());
+        this.setAmount(banks.get(bankId).getFullBalance().getAmount());
+        this.setCurrency(banks.get(bankId).getFullBalance().getCurrency());
     }
 
     public double getAmount() {

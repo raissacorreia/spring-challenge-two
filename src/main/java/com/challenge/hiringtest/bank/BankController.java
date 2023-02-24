@@ -16,17 +16,17 @@ public class BankController {
 
     @GetMapping("/transactions")
     public void printTransactions() {
-        bankTransactions = new BankTransactions(1);
+        bankTransactions = new BankTransactions(0);
         bankTransactions.printTransactions();
-        bankTransactions = new BankTransactions(2);
+        bankTransactions = new BankTransactions(1);
         bankTransactions.printTransactions();
     }
 
     @GetMapping("/balances")
     public void printBalances() {
-        bankBalance = new BankBalance(1);
+        bankBalance = new BankBalance(0);
         bankBalance.printBalance();
-        bankBalance = new BankBalance(2);
+        bankBalance = new BankBalance(1);
         bankBalance.printBalance();
     }
 }
