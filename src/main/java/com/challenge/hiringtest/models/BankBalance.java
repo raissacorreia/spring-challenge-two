@@ -42,7 +42,7 @@ public class BankBalance {
         this.currency = currency;
     }
 
-    public void printBalance() {
-        System.out.println("Balance: " + getAmount() + " " + getCurrency());
+    public String printBalance() {
+         return "Balance: " + getAmount() + " " + getCurrency();
     }
 }
