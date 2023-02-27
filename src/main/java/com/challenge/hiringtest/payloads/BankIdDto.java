@@ -1,3 +1,4 @@
+package com.challenge.hiringtest.payloads;
 
 public class BankIdDto {
     private int id;

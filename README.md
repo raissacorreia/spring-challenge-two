@@ -25,6 +25,7 @@ a service which in this case are handled by the classes that implement the commo
 #### Exception Handler
 
 Try - Catch statements were used to handle exceptions at the controller methods aiming debug as the Java standard suggests.
+
 If - Else statements were used to handle exceptions at the service methods aiming to provide user feedback about him or her inputs.
 
 ### Design of Balance
@@ -100,22 +101,31 @@ To make it more simple I added the Postman JSON export on the root of the projec
 
 - Get Balance: http://localhost:8080/balances
 
+```JSON
+{
+    "id": 0,
+}
+```
+
 #### Expected Returns for Balance
 
-- Get from stack:
-  - "Stack is empty" if stack is empty
-  - "Value" if "Value" is found and removed from stack
+- Get Balance:
+  - Return the data as a string like this: "Balance: Amount Currency", Amount is a double and Currency a string.
   - "Error: Error Message" if an error occurs and fall into catch statement in controller
 
 ### Usage of Transactions
 
 - Get transactions list: http://localhost:8080/transactions
 
+```JSON
+{
+    "id": 0,
+}
+```
 #### Expected Returns for Transactions
 
-- Get from storage:
-  - "Value" if "Value" is added to storage
-  - "Word: value not found" if value is not found
+- Get Transactions:
+  - Return Array of Strings, each string show a transaction like this: "Amount: amount(double), Type: ("debit" or "credit"), Text: text(string)"
   - "Error: Erro Message" if an error occurs and fall into catch statement in controller
 
 ## ⛏️ Built Using <a name = "built_using"></a>
