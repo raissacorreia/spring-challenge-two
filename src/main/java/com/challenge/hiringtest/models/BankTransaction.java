@@ -1,4 +1,4 @@
-package com.challenge.hiringtest.interfaces;
+package com.challenge.hiringtest.models;
 
 public class BankTransaction {
 

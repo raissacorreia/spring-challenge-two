@@ -1,7 +1,7 @@
 package com.challenge.hiringtest.bank;
 
-import com.challenge.hiringtest.interfaces.BankTransactions;
-import com.challenge.hiringtest.interfaces.BankBalance;
+import com.challenge.hiringtest.models.BankTransactions;
+import com.challenge.hiringtest.models.BankBalance;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

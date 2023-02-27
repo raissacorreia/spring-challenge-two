@@ -1,11 +1,11 @@
-package com.challenge.hiringtest.interfaces;
+package com.challenge.hiringtest.models;
 
 import com.challenge.hiringtest.adapters.*;
 
 import java.util.List;
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.challenge.hiringtest.interfaces.IBank;
+import com.challenge.hiringtest.models.IBank;
 
 public class BankTransactions {
 

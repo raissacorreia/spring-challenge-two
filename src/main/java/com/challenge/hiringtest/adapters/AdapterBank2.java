@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.bank2.integration.Bank2AccountSource;
-import com.challenge.hiringtest.interfaces.*;
+import com.challenge.hiringtest.models.*;
 
 public class AdapterBank2 implements IBank {
 
