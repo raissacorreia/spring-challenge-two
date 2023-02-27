@@ -95,7 +95,7 @@ The tests are implemented using JUnit 5.
 ## 🎈 Usage <a name="usage"></a>
 
 To make it more simple I added the Postman JSON export on the root of the project, with the name
-"Hiring-Test-Spring.postman_collection.json"
+"Hiring-Test-Spring-Two.postman_collection"
 
 ### Usage of Balance
 
