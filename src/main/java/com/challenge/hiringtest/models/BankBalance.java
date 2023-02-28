@@ -1,9 +1,11 @@
 package com.challenge.hiringtest.models;
 
-import com.challenge.hiringtest.adapters.*;
-
 import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
+
+import com.challenge.hiringtest.adapters.AdapterBank1;
+import com.challenge.hiringtest.adapters.AdapterBank2;
 import com.challenge.hiringtest.adapters.IBank;
 
 public class BankBalance {
@@ -43,6 +45,6 @@ public class BankBalance {
     }
 
     public String printBalance() {
-         return "Balance: " + getAmount() + " " + getCurrency();
+        return "Balance: " + getAmount() + " " + getCurrency();
     }
 }

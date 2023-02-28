@@ -1,12 +1,13 @@
 package com.challenge.hiringtest.models;
 
-import com.challenge.hiringtest.adapters.*;
-
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
+import com.challenge.hiringtest.adapters.AdapterBank1;
+import com.challenge.hiringtest.adapters.AdapterBank2;
 import com.challenge.hiringtest.adapters.IBank;
 
 public class BankTransactions {
@@ -29,13 +30,14 @@ public class BankTransactions {
         this.bankRecord = bankRecord;
     }
 
+    public String getWrittenTransaction(BankTransaction transaction) {
+        return "Amount: " + transaction.getAmount() +
+                ", Type: " + transaction.getWrittenType() +
+                ", Text: " + transaction.getText();
+    }
+
     public List<String> printTransactions() {
         return getBankRecord().stream().map(t -> getWrittenTransaction(t)).collect(Collectors.toList());
     }
 
-    public String getWrittenTransaction(BankTransaction transaction) {
-        return "Amount: " + transaction.getAmount() +
-                ", Type: " + transaction.getWrittenType() +
-                ", Text: "+ transaction.getText();
-    }
 }
