@@ -1,7 +1,7 @@
 package com.challenge.hiringtest.balance;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import com.challenge.hiringtest.models.BankBalance;
+import com.challenge.hiringtest.services.BalanceService;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -9,19 +9,17 @@ import org.junit.jupiter.api.BeforeEach;
 
 public class BalanceTest {
 
-  BankBalance bankBalance;
+  private final BalanceService balanceService = new BalanceService();
 
   @Test
   @DisplayName("Get Balance Bank 0")
   void testBalanceBank1() {
-    bankBalance = new BankBalance(0);
-    assertEquals("Balance: 215.5 USD", bankBalance.printBalance());
+    assertEquals("Balance: 215.5 USD", balanceService.printBalance(0));
   }
 
   @Test
   @DisplayName("Get Balance Bank 1")
   void testBalanceBank2() {
-    bankBalance = new BankBalance(1);
-    assertEquals("Balance: 512.5 USD", bankBalance.printBalance());
+    assertEquals("Balance: 512.5 USD", balanceService.printBalance(1));
   }
 }

@@ -13,19 +13,12 @@ public class BankBalance {
     private double amount;
     private String currency;
 
-    @Autowired
-    ArrayList<IBank> banks = new ArrayList<IBank>();
-
     public BankBalance(double amount, String currency) {
         this.amount = amount;
         this.currency = currency;
     }
 
-    public BankBalance(int bankId) {
-        banks.add(new AdapterBank1());
-        banks.add(new AdapterBank2());
-        this.setAmount(banks.get(bankId).getFullBalance().getAmount());
-        this.setCurrency(banks.get(bankId).getFullBalance().getCurrency());
+    public BankBalance() {
     }
 
     public double getAmount() {
@@ -42,9 +35,5 @@ public class BankBalance {
 
     public void setCurrency(String currency) {
         this.currency = currency;
-    }
-
-    public String printBalance() {
-        return "Balance: " + getAmount() + " " + getCurrency();
     }
 }

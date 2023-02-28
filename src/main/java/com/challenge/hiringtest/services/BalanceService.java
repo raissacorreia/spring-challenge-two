@@ -20,7 +20,6 @@ public class BalanceService {
     }
 
     public String printBalance(int id) {
-        BankBalance bankBalance = new BankBalance(id);
-        return "Balance: " + bankBalance.getAmount() + " " + bankBalance.getCurrency();
+        return "Balance: " + banks.get(id).getFullBalance().getAmount() + " " + banks.get(id).getFullBalance().getCurrency();
     }
 }
