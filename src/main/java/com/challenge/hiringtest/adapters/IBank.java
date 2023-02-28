@@ -1,4 +1,4 @@
-package com.challenge.hiringtest.models;
+package com.challenge.hiringtest.adapters;
 
 import java.util.List;
 
