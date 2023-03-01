@@ -14,11 +14,10 @@ import com.challenge.hiringtest.models.BankTransaction;
 @Service
 public class TransactionService {
 
-    private final ArrayList<IBank> banks = new ArrayList<IBank>();
+    private ArrayList<IBank> banks;
 
-    public TransactionService() {
-        banks.add(new AdapterBank1());
-        banks.add(new AdapterBank2());
+    public TransactionService(ArrayList<IBank> banks) {
+        this.banks = banks;
     }
 
     public String getWrittenTransaction(BankTransaction transaction) {

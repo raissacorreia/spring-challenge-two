@@ -12,11 +12,10 @@ import com.challenge.hiringtest.models.BankBalance;
 @Service
 public class BalanceService {
 
-    private final ArrayList<IBank> banks = new ArrayList<IBank>();
+    private ArrayList<IBank> banks;
 
-    public BalanceService() {
-        banks.add(new AdapterBank1());
-        banks.add(new AdapterBank2());
+    public BalanceService(ArrayList<IBank> banks) {
+        this.banks = banks;
     }
 
     public String printBalance(int id) {

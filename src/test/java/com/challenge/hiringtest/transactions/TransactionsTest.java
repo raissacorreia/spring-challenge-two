@@ -2,14 +2,19 @@ package com.challenge.hiringtest.transactions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import com.challenge.hiringtest.services.TransactionService;
+import com.challenge.hiringtest.adapters.IBank;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
+import java.util.ArrayList;
+
 public class TransactionsTest {
 
-  private final TransactionService transactionService = new TransactionService();
+  private ArrayList<IBank> banks;
+
+  private final TransactionService transactionService = new TransactionService(banks);
 
   @Test
   @DisplayName("Get Balance Bank 0")
